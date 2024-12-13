@@ -1,0 +1,24 @@
+
+GET http://localhost:3000/places?text=rua rubi, belo horizonte, 402
+
+###
+
+@originId = ChIJpbcNZTmapgAR1JsdvUfWg4w
+
+@destinationId = ChIJNUIKqxSXpgAR38bsQGcCZik
+
+###
+GET http://localhost:3000/directions?originId={{originId}}&destinationId={{destinationId}}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+    "name": "rota 1",
+    "origin_id": "{{ originId }}",
+    "destination_id": "{{ destinationId }}"
+}
+
+###
+GET http://localhost:3000/routes/675b821f96401faae2a8c6d3
